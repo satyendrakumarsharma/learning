@@ -1,0 +1,75 @@
+@CHARSET "ISO-8859-1";
+
+h2{
+	text-transform: capitalize;
+}
+
+a{
+	text-decoration: none;
+}
+
+ul{
+	list-style-type: none;
+	margin: auto;
+	height: 80px;
+	width: 350px;
+	padding: 5px;
+	display: block;
+}
+
+li{
+	background-color: #85BB65;
+	border:thin;
+	border-color: orange;
+	border-style: outset;
+	padding: 12px;
+	float: left;
+	font: menu;
+	color: maroon;
+}
+
+li,a:HOVER{
+	font-weight: bold;
+}
+
+caption{
+	text-transform: capitalize;
+	text-align: center;
+	font-weight: bold;
+}
+
+#loginPannel{
+	background-color: #B5EAAA;
+	border: dashed thin;
+	border-radius: 10px;
+	border-color: purple;
+	width: 300px;
+	padding: 40px;
+	height: 100px;
+}
+
+#loginErr{
+	color: red;
+	text-align: left;
+	font-family: monospace;
+}
+
+#logoutMessageBox{
+	width: 400px;
+	border: thin;
+	border-style: dotted;
+	border-color: orange;
+	padding: 20px;
+	background-color: #C47451;
+}
+
+.switch{
+	text-decoration: none;
+	border:thin;
+	border-color: orange;
+	background-color: #EE9A4D;
+	padding: 5px;
+}
+.switch:HOVER {
+	background-color: #D4A017;
+}

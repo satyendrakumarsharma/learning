@@ -1,6 +1,8 @@
 package com.satya.learn.ctrl;
 
 import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -8,7 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.satya.learn.action.LoginAction;
+import com.satya.learn.action.UserAction;
 
 /**
  * Servlet implementation class CentralController
@@ -39,14 +41,24 @@ public class CentralController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		LoginAction loginAct = new LoginAction();
-		String username = request.getParameter("username");
-		String password = request.getParameter("password");
-		boolean isLogin = loginAct.authLogin(username, password);
-		response.getWriter().append("Served at: ").append(request.getContextPath())
-				.append("<hr/><font color='")
-				.append(isLogin ? "green'>LOGGEDIN" : "red'>LOGIN FAILED")
-				.append("</font>");
+		String pointTo = "index.jsp";
+		String action = request.getParameter("action");
+		UserAction usrAct = new UserAction();
+		if(action!=null && action.equals("login")){
+			String username = request.getParameter("username");
+			String password = request.getParameter("password");
+			boolean isLogin = usrAct.authLogin(request, username, password);
+			if(isLogin){
+				pointTo = "home.jsp";
+			} else {
+				pointTo = pointTo + "?action=login_failed";
+			}
+		} else if (action!=null && action.equals("logout")){
+			request.getSession().invalidate();
+			pointTo = pointTo + "?action=loggedout";
+		}
+		RequestDispatcher rd = request.getRequestDispatcher(pointTo);
+		rd.forward(request, response);
 	}
 
 	/**
