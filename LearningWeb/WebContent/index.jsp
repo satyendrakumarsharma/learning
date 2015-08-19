@@ -19,7 +19,8 @@
 		</ul>
 	</div>
 	<div id="loginPannel" style="border:solid double green">
-		<form action='LoginAction'>
+		<form action='CentralController'>
+			<input type="hidden" name="action" value="login" />
 			<table>
 				<tr>
 					<td>Username:</td><td><input type='text' name='username'/></td>
