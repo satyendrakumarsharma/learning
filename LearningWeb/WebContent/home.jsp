@@ -4,8 +4,13 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-	<title>Home</title>
+	<title>.:: Home ::.</title>
 	<link rel="stylesheet" type="text/css" href="style/ems_common.css">
+	<style type="text/css">
+		body{
+			background-color: #99C68E; 
+		}
+	</style>
 </head>
 <body>
 	<h2 align="center">Event Management System</h2>

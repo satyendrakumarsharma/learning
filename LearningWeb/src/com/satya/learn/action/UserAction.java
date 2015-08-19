@@ -6,7 +6,8 @@ package com.satya.learn.action;
 import javax.servlet.http.HttpServletRequest;
 
 /**
- * @author 703162557
+ * The <code>UserAction</code> class performs all the actions related to the user.
+ * @author Satyendra
  *
  */
 public class UserAction {
@@ -21,7 +22,7 @@ public class UserAction {
 	/**
 	 * Authenticates the credentials to provide the status of login
 	 * attempt/request.
-	 * @param request 
+	 * @param request httprequest for current login attempt.
 	 * @param username Username of the requesting user.
 	 * @param password Password of the requesting user.
 	 * @return Login authentication status of the current attempt.
