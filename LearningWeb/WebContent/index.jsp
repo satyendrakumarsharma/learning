@@ -18,7 +18,7 @@
 			<li>Logout</li>
 		</ul>
 	</div>
-	<div>
+	<div id="loginPannel" style="border:solid double green">
 		<form action='LoginAction'>
 			<table>
 				<tr>
